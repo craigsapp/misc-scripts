@@ -1,0 +1,40 @@
+#!/usr/bin/perl
+#
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+# Creation Date: Fri Mar 22 20:57:21 PST 2002
+# Last Modified: Fri Mar 22 20:57:21 PST 2002
+# Filename:      /usr/local/bin/tolower
+# Syntax:        perl 5
+#
+# Description:   Make filenames all lower case
+#
+# Usage:         tolower filename(s)
+#
+
+use strict;
+use File::Copy qw(move);
+
+foreach my $file (@ARGV) {
+   renamefile($file);
+}
+
+exit(0);
+
+###########################################################################
+
+##############################
+##
+## renamefile --
+##
+
+sub renamefile {
+   my ($oldfilename) = @_;
+   my $newfilename = $oldfilename;
+   $newfilename =~ tr/A-Z/a-z/;
+   if ($oldfilename ne $newfilename) {
+		move $oldfilename, $newfilename;
+   }
+}
+
+
+
