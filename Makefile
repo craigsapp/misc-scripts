@@ -4,5 +4,5 @@
 #
 
 all:
-	cp bin/* /usr/local/bin
+	sudo cp bin/* /usr/local/bin
 

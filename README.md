@@ -9,6 +9,11 @@ The `tolower` script converts all filenames to lower case.  Usage:
     tolower *
 ```
 
+dir
+===========
+
+Alias for "ls -asCF"
+
 
 
 
